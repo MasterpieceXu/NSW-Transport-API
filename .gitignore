@@ -1,0 +1,21 @@
+# 忽略虚拟环境
+.venv/
+
+# 忽略Python和Jupyter的缓存
+__pycache__/
+.ipynb_checkpoints/
+
+# 忽略macOS的系统文件
+__MACOSX/
+
+# !!! 忽略所有 .env 文件，防止泄露机密 !!!
+*.env
+
+# 忽略数据库文件
+# (根据你之前的截图，这个文件叫 z5707025.sqlite)
+*.sqlite
+
+# ignore answer,
+answer.py
+z1234567.ipynb
+z5707025_tests.py

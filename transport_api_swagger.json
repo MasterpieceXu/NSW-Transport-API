@@ -1,0 +1,2432 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Get GTFS timetables, stops, and route shapes"
+    },
+    "host": "api.transport.nsw.gov.au",
+    "basePath": "/v1/gtfs/schedule",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "*/*"
+    ],
+    "produces": [
+        "application/octet-stream"
+    ],
+    "tags": [
+        {
+            "name": "buses"
+        },
+        {
+            "name": "ferries"
+        },
+        {
+            "name": "lightrail"
+        },
+        {
+            "name": "nswtrains"
+        },
+        {
+            "name": "sydneytrains"
+        },
+        {
+            "name": "regionbuses"
+        }
+    ],
+    "security": [
+        {
+            "APIKey": []
+        }
+    ],
+    "paths": {
+        "/buses": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Buses",
+                "operationId": "GetBuses",
+                "description": "Please note the consolidated \u201cbuses\u201d schedule for realtime does not yet exist.  Whilst a zip file may be returned, it will be an set of invalid csv or text files or may return erroneous data.  To get buses schedule data, please use schedules from individual agency IDs.  You can review the agencies you need by referring to the Reference Tables https://opendata.transport.nsw.gov.au/reference-tables \n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/SBSC006": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Transit Systems",
+                "operationId": "GetBusesSBSC006",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/buses/GSBC001": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Busways R1",
+                "operationId": "GetBusesGSBC001",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/buses/GSBC002": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Transit Systems NSW SW",
+                "operationId": "GetBusesGSBC002",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC003": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Transit Systems NSW",
+                "operationId": "GetBusesGSBC003",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/buses/GSBC004": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for CDC NSW R4",
+                "operationId": "GetBusesGSBC004",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC007": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Busways North West",
+                "operationId": "GetBusesGSBC007",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC008": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Keolis Downer Northern Beaches",
+                "operationId": "GetBusesGSBC008",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC009": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Transdev John Holland",
+                "operationId": "GetBusesGSBC009",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC010": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for U-Go Mobility",
+                "operationId": "GetBusesGSBC010",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/GSBC014": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for CDC NSW R14",
+                "operationId": "GetBusesGSBC014",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC001": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Rover Coaches",
+                "operationId": "GetBusesOSMBSC001",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC002": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Hunter Valley Buses",
+                "operationId": "GetBusesOSMBSC002",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC003": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Port Stephens Coaches",
+                "operationId": "GetBusesOSMBSC003",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC004": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Hunter Valley Buses",
+                "operationId": "GetBusesOSMBSC004",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/buses/OMBSC006": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Busways OMR6",
+                "operationId": "GetBusesOMBSC006",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/buses/OMBSC007": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for RedBus CDC NSW",
+                "operationId": "GetBusesOMBSC007",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC008": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Blue Mountains Transit",
+                "operationId": "GetBusesOSMBSC008",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC009": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Premier Charters",
+                "operationId": "GetBusesOSMBSC009",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC010": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Premier Illawarra",
+                "operationId": "GetBusesOSMBSC010",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC011": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Coastal Liner",
+                "operationId": "GetBusesOSMBSC011",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/OSMBSC012": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Dions Bus Service",
+                "operationId": "GetBusesOSMBSC012",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/NISC001": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Newcastle Transport Buses",
+                "operationId": "GetBusesNISC001",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/buses/ReplacementBus": {
+            "get": {
+                "tags": [
+                    "buses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Planned Replacement Buses",
+                "operationId": "GetBusesReplacementBus",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nPlease review the Real time Buses Technical Documentation - https://opendata.transport.nsw.gov.au/documentation\n\nFor agency details, please refer to the \u2018Overlapping agencies in GTFS feeds\u2019 table, \u2018For Realtime GTFS static timetable parameter\u2019 column on https://opendata.transport.nsw.gov.au/reference-tables\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/ferries/sydneyferries": {
+            "get": {
+                "tags": [
+                    "ferries"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Sydney Ferries",
+                "operationId": "GetSydneyFerries",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/ferries/MFF": {
+			"get": {
+                "tags": [
+                    "ferries"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Manly Fast Ferry",
+                "operationId": "GetMFF",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/lightrail/innerwest": {
+            "get": {
+                "tags": [
+                    "lightrail"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Inner West Light Rail",
+                "operationId": "GetLightRailInnerwest",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/lightrail/newcastle": {
+            "get": {
+                "tags": [
+                    "lightrail"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Newcastle Light Rail",
+                "operationId": "GetLightRailNewcastle",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/lightrail/cbdandsoutheast": {
+            "get": {
+                "tags": [
+                    "lightrail"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for CBD & South East Light Rail",
+                "operationId": "GetLightRailCBDandSouthEast",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/lightrail/parramatta": {
+            "get": {
+                "tags": [
+                    "lightrail"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Parramatta Light Rail",
+                "operationId": "GetLightRailParramatta",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/nswtrains": {
+            "get": {
+                "tags": [
+                    "nswtrains"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for NSW Trains",
+                "operationId": "GetNSWTrains",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/sydneytrains": {
+            "get": {
+                "tags": [
+                    "sydneytrains"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Sydney Trains",
+                "operationId": "GetSydneyTrains",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/southeasttablelands": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesSouthEastTablelands",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/southeasttablelands2": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesSouthEastTablelands2",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/northcoast": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesNorthCoast",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/northcoast2": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesNorthCoast2",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/centralwestandorana": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesCentralWestAndOrana",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/centralwestandorana2": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesCentralWestAndOrana2",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/riverinamurray": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesRiverinaMurray",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/newenglandnorthwest": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionBusesNewEnglandNorthwest",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/riverinamurray2": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionRiverinaMurray2",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/regionbuses/northcoast3": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionNorthCoast3",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+        "/regionbuses/sydneysurrounds": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionSydneySurrounds",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/regionbuses/newcastlehunter": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionNewcastleHunter",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        },
+		"/regionbuses/farwest": {
+            "get": {
+                "tags": [
+                    "regionbuses"
+                ],
+                "summary": "GTFS timetables, stops, and route shapes for Regional Buses",
+                "operationId": "GetRegionFarWest",
+                "description": "Please see the General Transit Feed Specification (GTFS) documentation here: https://gtfs.org/\n\nReturns ZIP file containing CSV files.\n\nThe HEAD operation can be used to tell you if the content has changed (as GET may not return an HTTP 304 when no content has changed.)\n\nFor example, you may compare the Last-Modified header retrieved during a HEAD operation with the Last-Modified header retrieved during a previous GET operation. If the headers are the same, the content has not changed since the previous GET operation. If the headers are different, the content has changed since the previous GET operation.",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "consumes": [],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The request has been processed successfully.",
+                        "schema": {
+                            "type": "file"
+                        },
+                        "examples": {}
+                    },
+                    "401": {
+                        "description": "The application calling the API has not been authenticated.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "404": {
+                        "description": "The requested resource could not be found.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "500": {
+                        "description": "An internal error has occurred.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    },
+                    "503": {
+                        "description": "The server is currently unavailable.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorDetails"
+                        },
+                        "examples": {}
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "APIKey": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Expected Format: apikey [TOKEN]"
+        }
+    },
+    "definitions": {
+        "ErrorDetails": {
+            "type": "object",
+            "required": [
+                "TransactionId",
+                "ErrorDateTime",
+                "Message",
+                "RequestedUrl",
+                "RequestedMethod"
+            ],
+            "description": "Error response",
+            "properties": {
+                "TransactionId": {
+                    "type": "string"
+                },
+                "ErrorDateTime": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "RequestedUrl": {
+                    "type": "string"
+                },
+                "RequestedMethod": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "ErrorDetails": {
+                    "TransactionId": "XXXXXXXXXX",
+                    "ErrorDateTime": "XXXXXXXXXX",
+                    "Message": "XXXXXXXXXX",
+                    "RequestedUrl": "XXXXXXXXXX",
+                    "RequestedMethod": "XXXXXXXXXX"
+                }
+            }
+        }
+    }
+}
