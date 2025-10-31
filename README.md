@@ -77,29 +77,24 @@ You cannot access protected routes until you get a `Bearer Token`.
 }
 ```
 
-### 3. How to Use the Token (Example)
+### 3. How to Import Data (Critical Step)
 
-You must now copy this `access_token` and provide it in the **Authorization** header for all protected routes.
+After logging in as a `Planner` or `Admin`, you must import the data.
 
-In the Swagger UI, click the "Authorize" 🔒 button at the top right and paste your token in this format: `Bearer <your_token>`.
+1.  In the Swagger UI, click the "Authorize" 🔒 button at the top right and paste your token in this format: `Bearer <your_token>`.
+2.  Find the `gtfs` section and the endpoint: `POST /gtfs/import/{agency_id}`.
+3.  Click "Try it out".
+4.  In the `agency_id` field, type a valid ID (e.g., **`GSBC001`**).
+5.  Click **Execute**. This will download the data and populate your database.
 
-**Example: Add a Favourite Route**
 
-**Request:** `POST /favourites`
-**Header:** `Authorization: Bearer <your_token>`
-**Body:**
-```json
-{
-  "route_id": "RTEST_123"
-}
-```
+### 4. How to Use Other Endpoints
 
-### 4. Key Endpoints to Test
+After the import is successful, you can test other features.
 
-* **`GET /gtfs/search/stops?q=circular`**: Test the fuzzy search functionality.
-* **`POST /favourites`**: Add a favourite route (as a `Commuter`).
-* **`GET /gtfs/visualize/favourites`**: The **"wow" feature**. See the map of your favourites (as a `Commuter`).
-* **`GET /gtfs/export/routes/{agency_id}`**: Test the CSV export (as a `Planner`).
+* **`GET /gtfs/search/stops?q=circular`**: Test the fuzzy search.
+* **`POST /favourites`**: (Requires a `Commuter` token) Add a favourite route.
+* **`GET /gtfs/visualize/favourites`**: (Requires a `Commuter` token) See the map.
 
 ---
 
@@ -131,36 +126,42 @@ In the Swagger UI, click the "Authorize" 🔒 button at the top right and paste 
 
 ### 3. Configuration
 
-1.  Copy the example environment file. (The file you will use is `transport_api.key.env`, which should be in your `.gitignore`).
+1.  **Create Your Local Environment File**
+    This project requires a file named `transport_api.key.env` to store your secret API keys. This file is **not** included in the repository (it is listed in `.gitignore` for security).
+
+    You must create your own local copy by **copying the template file** (`.example`) that *is* included:
+
     ```bash
+    # This command copies the template to a new file
     cp transport_api.key.env.example transport_api.key.env
     ```
 
-2.  Edit your new `transport_api.key.env` file with your credentials:
+2.  **Edit Your New Local File**
+    Now, open the **newly created `transport_api.key.env` file** (the one *without* the `.example` extension) in your code editor.
+
+    Fill in the placeholder values with your own keys:
+
     * Get your `TRANSPORT_API_KEY` by registering at the [NSW Transport Open Data portal](https://opendata.transport.nsw.gov.au/).
     * Create your own long, random, and secure string for the `JWT_SECRET_KEY`.
 
-### 4. Running the Application
+---
 
-1.  **Initialize the Database:**
-    The application is designed to create all necessary tables (`users`, `favourites`, etc.) on its first run.
+### 4. Running the Application 
 
-2.  **Import GTFS Data (If required):**
-    *(You need to add the command for your data import script here, for example:)*
+1.  **Start the API Server:**
+    This command starts the server. The first time it runs, it will also create all the **empty** database tables (`users`, `favourites`, `routes`, `stops`, etc.).
+
+    *(**Note:** Replace `Transport.api.py` with the **actual name** of your API file.)*
     ```bash
-    # Run the import script to download GTFS data and populate the database
-    python your_import_script.py
+    python [actual name].api.py
     ```
 
-3.  **Start the API Server:**
-    ```bash
-    python your_api_file.api.py
-    ```
+2.  **Access the API & Import Data:**
+    * Once the server is running, open your browser and go to **`http://127.0.0.1:5000/`**.
+    * Follow the instructions in the **"📖 API Usage & Example Walkthrough"** section above to log in and **run the `POST /gtfs/import/{agency_id}` endpoint**.
 
-4.  **Access the API:**
-    Once the server is running, open your browser and go to **`http://127.0.0.1:5000/`**.
-
-    You will see the live, interactive **Swagger UI** documentation, where you can test every endpoint.
+3.  **Ready to Use:**
+    * After the import is successful, your database will be populated with data, and all API endpoints will be fully functional.
 
 ---
 
