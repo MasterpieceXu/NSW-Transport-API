@@ -109,7 +109,7 @@ After the import is successful, you can test other features.
 
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git)
+    git clone [https://github.com/Masterpiece/NSW-Transport-API.git](https://Masterpiece/NSW-Transport-API.git)
     cd YOUR_REPOSITORY
     ```
 
